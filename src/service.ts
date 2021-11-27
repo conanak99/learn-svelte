@@ -24,7 +24,7 @@ export const getIdolById = async (idolId: string): Promise<Idol> => {
 };
 
 export const getMovies = async (idolId: string): Promise<Result<Movie>> => {
-  const url = `${URL}/videos?${idolId}`;
+  const url = `${URL}/videos/${idolId}?hits=20`;
 
   const result = await fetch(url).then((x) => x.json());
   return result;

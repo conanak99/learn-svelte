@@ -1,17 +1,21 @@
 <script lang="ts">
+  import { Link } from "svelte-navigator";
   import type { Idol } from "../models/idol";
 
   export let idol: Idol;
 </script>
 
 <div class="card">
-  <a href="#" class="image">
+  <Link to={`idol/${idol.id}`} class="image">
     <img src={idol.imageUrl} alt={idol.name} />
-  </a>
+  </Link>
   <div class="content">
-    <a href="#" class="header">{idol.name} ({idol.japanName})</a>
+    <Link to={`idol/${idol.id}`} class="header">
+      {idol.name} ({idol.japanName})
+    </Link>
     {#if idol.birthday}
       <div class="meta">
+        <i class="icon calendar" />
         {idol.birthday}
       </div>
     {/if}
