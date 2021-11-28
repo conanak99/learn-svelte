@@ -67,7 +67,7 @@
     <div class="ui divided items">
       {#each movies as movie (movie.name)}
         <div class="item">
-          <a href={movie.siteUrl} target="_blank" class="image">
+          <a href={movie.siteUrl} target="_blank" class="image movie-image">
             <img src={movie.imageUrl} alt={movie.name} />
           </a>
           <div class="content">
@@ -101,6 +101,10 @@
 <style>
   .nav {
     padding-top: 1rem;
+  }
+
+  .image.movie-image {
+    width: 90px !important;
   }
 
   .idol {
